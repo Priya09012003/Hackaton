@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookWorkStation">
+
+
+    <ImageView
+        android:id="@+id/iv_calendar_previous"
+        android:layout_width="66dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="48dp"
+        android:padding="20dp"
+        android:src="@drawable/baseline_keyboard_arrow_left_24"
+        app:layout_constraintEnd_toStartOf="@+id/text_date_month"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_calendar_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="44dp"
+        android:padding="20dp"
+        android:src="@drawable/baseline_keyboard_arrow_left_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_date_month"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_date_month"
+        style="@style/TextAppearance.MaterialComponents.Subtitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="December 2020" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="80dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_date_month"
+        tools:listitem="@layout/date_layout" />
+
+    <TextView
+        android:id="@+id/selectedDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="314dp"
+        android:text="Selected Date : "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+    <TextView
+        android:id="@+id/selectedDD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="325dp"
+        android:text="Selected DD : "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectedDate" />
+
+    <TextView
+        android:id="@+id/selectedDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="319dp"
+        android:text="Selected Day : "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectedDD" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="21dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="278dp"
+        android:fontFamily="@font/poppins"
+        android:text="Select Date and Slot"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextbtnBook3"
+        android:layout_width="182dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="11dp"
+        android:background="@drawable/notbtn"
+        android:text="10:00AM - 11:00AM"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/nextbtnBook5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectedDay" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextbtnBook5"
+        android:layout_width="182dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="127dp"
+        android:layout_marginEnd="23dp"
+        android:background="@drawable/notbtn"
+        android:text="11:00AM - 12:00PM"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nextbtnBook3"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextbtnBook6"
+        android:layout_width="182dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btnbg"
+        android:text="05:00PM-06:00PM"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nextbtnBook7"
+        app:layout_constraintTop_toBottomOf="@+id/nextbtnBook5" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextbtnBook7"
+        android:layout_width="182dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="13dp"
+        android:background="@drawable/available"
+        android:text="01:00PM - 02:00PM"
+        android:textColor="#5B6180"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/nextbtnBook6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nextbtnBook3" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextbtnBook2"
+        android:layout_width="374dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/btnbg"
+        android:text="NEXT"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

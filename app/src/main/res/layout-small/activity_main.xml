@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="5dp"
+    android:paddingTop="5dp"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnHistory"
+        android:layout_width="165dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="205dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/bookinghistorybtn"
+        android:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="Booking history"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.707"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="66dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="85dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="68dp"
+        android:text="Co-working"
+        android:textColor="#605c5c"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardbookWorkStation"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="149dp"
+        app:cardBackgroundColor="#4d60d1"
+        app:cardCornerRadius="14dp"
+        app:layout_constraintEnd_toStartOf="@+id/cardMeetingroom"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/cardone" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardMeetingroom"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="149dp"
+        android:layout_marginEnd="55dp"
+        app:cardBackgroundColor="#c7cffc"
+        app:cardCornerRadius="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardbookWorkStation"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/cardtwo" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="116dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Book Work  Station"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardbookWorkStation"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="@+id/cardbookWorkStation"
+        app:layout_constraintTop_toBottomOf="@+id/cardbookWorkStation" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="105dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Meeting  room"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardMeetingroom"
+        app:layout_constraintHorizontal_bias="0.628"
+        app:layout_constraintStart_toStartOf="@+id/cardMeetingroom"
+        app:layout_constraintTop_toBottomOf="@+id/cardMeetingroom" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
