@@ -1,9 +1,8 @@
+
 package com.example.hackaton
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
 
 class MyAvailableAdapter(private val dataList: List<MyModel>) :
@@ -11,9 +10,9 @@ class MyAvailableAdapter(private val dataList: List<MyModel>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutResId = when (viewType) {
-            MyModel.SELECTED_ITEM -> R.layout.selectedbtnItem
-            MyModel.AVAILABLE_ITEM -> R.layout.availablebtnitem
-            MyModel.NOT_AVAILABLE_ITEM -> R.layout.notavailablebtn
+            MyModel.SELECTED_ITEM -> R.layout.selected_item
+            MyModel.AVAILABLE_ITEM -> R.layout.available_item
+            MyModel.NOT_AVAILABLE_ITEM -> R.layout.notavailable_item
             else -> throw IllegalArgumentException("Invalid view type")
         }
         val view = LayoutInflater.from(parent.context).inflate(layoutResId, parent, false)
@@ -22,20 +21,19 @@ class MyAvailableAdapter(private val dataList: List<MyModel>) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = dataList[position]
-        when (item.backgroundResId) {
-            R.drawable.selectbtn -> {
+        when (item.itemType) {
+            MyModel.SELECTED_ITEM -> {
                 holder.buttonSelected.setBackgroundResource(item.backgroundResId)
                 holder.buttonSelected.text = item.value
             }
-            R.drawable.available -> {
+            MyModel.AVAILABLE_ITEM -> {
                 holder.buttonAvailable.setBackgroundResource(item.backgroundResId)
                 holder.buttonAvailable.text = item.value
             }
-            R.drawable.notbtn -> {
+            MyModel.NOT_AVAILABLE_ITEM -> {
                 holder.buttonNotAvailable.setBackgroundResource(item.backgroundResId)
                 holder.buttonNotAvailable.text = item.value
             }
-            else -> throw IllegalArgumentException("Invalid background resource ID")
         }
     }
 
@@ -44,12 +42,6 @@ class MyAvailableAdapter(private val dataList: List<MyModel>) :
     }
 
     override fun getItemViewType(position: Int): Int {
-        val item = dataList[position]
-        return when (item.backgroundResId) {
-            R.drawable.selectbtn -> MyModel.SELECTED_ITEM
-            R.drawable.available -> MyModel.AVAILABLE_ITEM
-            R.drawable.notbtn -> MyModel.NOT_AVAILABLE_ITEM
-            else -> throw IllegalArgumentException("Invalid background resource ID")
-        }
+        return dataList[position].itemType as Int
     }
 }
